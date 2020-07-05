@@ -11,11 +11,6 @@ namespace ProAgil.WebAPI.Controllers
     [Route("[controller]")]
     public class ValuesController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<ValuesController> _logger;
 
         public ValuesController(ILogger<ValuesController> logger, DataContext context)
