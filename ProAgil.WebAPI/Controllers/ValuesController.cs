@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ProAgil.WebAPI.Data;
+using ProAgil.Repository;
 
 namespace ProAgil.WebAPI.Controllers
 {
@@ -13,13 +13,13 @@ namespace ProAgil.WebAPI.Controllers
     {
         private readonly ILogger<ValuesController> _logger;
 
-        public ValuesController(ILogger<ValuesController> logger, DataContext context)
+        public ValuesController(ILogger<ValuesController> logger, ProAgilContext context)
         {
             _logger = logger;
             _context = context;
         }
 
-        public readonly DataContext _context;
+        public readonly ProAgilContext _context;
 
         [HttpGet]
         public async Task<IActionResult> Get()
