@@ -11,29 +11,6 @@ namespace ProAgil.WebAPI.Controllers
     [Route("[controller]")]
     public class ValuesController : ControllerBase
     {
-        private readonly ILogger<ValuesController> _logger;
-
-        public ValuesController(ILogger<ValuesController> logger, ProAgilContext context)
-        {
-            _logger = logger;
-            _context = context;
-        }
-
-        public readonly ProAgilContext _context;
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            try
-            {
-                var results = await _context.Eventos.ToListAsync();
-
-                return Ok(results);
-            }
-            catch (System.Exception)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro no Banco de dados.");
-            }
-        }
+        
     }
 }
