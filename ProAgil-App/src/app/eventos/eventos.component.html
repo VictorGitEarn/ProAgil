@@ -15,7 +15,7 @@
       <th>
         <button class="btn btn-outline-primary"
         (click)="alterarImagem()">
-          Mostrar Imagem
+        <i class="{{mostrarImagem ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
         </button>
       </th>
       <th>#</th>
@@ -36,12 +36,19 @@
         [style.margin.px]="imagemMargem"
         >
       </td>
-      <td>{{evento.eventoId}}</td>
+      <td>{{evento.id}}</td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
-      <td>{{evento.dataEvento}}</td>
+      <td>{{evento.dataEvento |DateTimeFormatPipe}}</td>
       <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.lote |uppercase}}</td>
+      <td>
+        <div *ngIf="!evento.lote.length">
+          Não informado
+        </div>
+        <div *ngIf="evento.lote.length">
+          {{evento.lote[0].nome |uppercase}}
+        </div>
+      </td>
       <td>
         <button class="btn btn-success"></button>
         <button class="btn btn-danger"></button>
