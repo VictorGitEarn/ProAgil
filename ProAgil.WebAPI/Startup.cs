@@ -31,7 +31,8 @@ namespace ProAgil.WebAPI
                 x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnetion"))
                 );
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
-            
+
+            services.AddControllers().AddNewtonsoftJson();
             services.AddControllers();
             services.AddCors();
         }
