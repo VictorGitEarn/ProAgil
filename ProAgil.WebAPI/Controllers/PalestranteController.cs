@@ -29,7 +29,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro do banco de dados");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro no Banco de dados. {ex.Message}");
             }
         }
 
@@ -44,7 +44,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro no Bando de dados");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro no Banco de dados. {ex.Message}");
             }
         }
 
@@ -60,7 +60,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Deu ruim no Banco de dados");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Erro no Banco de dados. {ex.Message}");
             }
 
             return BadRequest();
@@ -82,7 +82,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco de dados");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Erro no Banco de dados. {ex.Message}");
             }
 
             return BadRequest();
@@ -104,7 +104,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco de dados");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Erro no Banco de dados. {ex.Message}");
             }
 
             return BadRequest();
